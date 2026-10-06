@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defneyy Bakery - Track Your Order</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for serif headings and Inter for clean sans-serif text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF6ED;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF6ED] text-[#2D231E] min-h-screen flex flex-col justify-between selection:bg-[#4A2E1B] selection:text-white">
+
+    <div>
+        <header class="bg-[#2D231E] text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <!-- Brand Logo -->
+                <div class="flex items-center gap-2">
+                    <span class="font-serif text-2xl sm:text-3xl tracking-wide font-bold italic">Defneyy Bakery</span>
+                </div>
+
+                <!-- Account Link -->
+                <div class="flex items-center gap-2 text-sm text-[#D4C3B3] hover:text-white transition-colors cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>My Account</span>
+                </div>
+            </div>
+
+            <!-- Sub Header Navigation & Hub info -->
+            <div class="border-t border-[#43342C] text-xs sm:text-sm">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2 text-[#D4C3B3]">
+                    <nav class="flex items-center gap-3 sm:gap-6 font-medium tracking-wider">
+                        <a href="#" class="hover:text-white transition-colors">HOME</a>
+                        <span class="text-[#5A453A]">/</span>
+                        <a href="#" class="hover:text-white transition-colors">CATALOGUE</a>
+                        <span class="text-[#5A453A]">/</span>
+                        <a href="#" class="text-[#E6C687] font-semibold tracking-widest">TRACK ORDER</a>
+                    </nav>
+                    <div class="text-right text-xs text-[#C4B2A5]">
+                        Delivery Hub: <span class="text-white font-medium">Colombo 05, Sri Lanka</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+            
+            <!-- Page Title & Live Updates Badge -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                <div>
+                    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#2D231E] mb-1">Track Your Order</h1>
+                    <p class="text-sm sm:text-base text-[#6B5A4E]">
+                        Order <span class="font-semibold text-[#2D231E]">#DB-2026-0143</span> — Chocolate Cake (2kg)
+                    </p>
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-[#FFF9EE] border border-[#E8D9C2] px-4 py-2 rounded-full shadow-sm text-xs sm:text-sm font-medium text-[#2D231E]">
+                        <span class="h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                        Live Bakery Updates
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-[#EAE0D0] p-6 sm:p-10 mb-8">
+                <div class="relative">
+                    <!-- Progress track line behind steps -->
+                    <div class="hidden md:block absolute top-6 left-12 right-12 h-1 bg-[#EAE0D0] z-0"></div>
+                    <!-- Completed portion of track line -->
+                    <div class="hidden md:block absolute top-6 left-12 w-1/2 h-1 bg-[#4A2E1B] z-0 transition-all duration-500"></div>
+
+                    <!-- Steps Container -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 relative z-10 text-center">
+                        
+                        <!-- Step 1: Pending -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-[#4A2E1B] text-white flex items-center font-bold justify-center shadow-md mb-3 text-sm">
+                                1
+                            </div>
+                            <h4 class="font-semibold text-sm text-[#2D231E]">Pending</h4>
+                            <p class="text-xs text-[#8A796B] mt-0.5">10:15 AM</p>
+                        </div>
+
+                        <!-- Step 2: Confirmed -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-[#4A2E1B] text-white flex items-center font-bold justify-center shadow-md mb-3 text-sm">
+                                2
+                            </div>
+                            <h4 class="font-semibold text-sm text-[#2D231E]">Confirmed</h4>
+                            <p class="text-xs text-[#8A796B] mt-0.5">10:20 AM</p>
+                        </div>
+
+                        <!-- Step 3: In Preparation (Active) -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-[#D49E3E] text-white flex items-center font-bold justify-center shadow-lg ring-4 ring-[#F9E8C9] mb-3 text-sm">
+                                3
+                            </div>
+                            <h4 class="font-bold text-sm text-[#B87D17]">In Preparation</h4>
+                            <span class="inline-block bg-[#FFF4D9] text-[#9A6A12] border border-[#F3E0B5] text-[11px] font-medium px-2.5 py-0.5 rounded-md mt-1 shadow-2xs">
+                                Frosting & Styling
+                            </span>
+                        </div>
+
+                        <!-- Step 4: Ready -->
+                        <div class="flex flex-col items-center opacity-70">
+                            <div class="w-12 h-12 rounded-full bg-[#E5DCD0] text-[#7A695C] flex items-center font-bold justify-center mb-3 text-sm">
+                                4
+                            </div>
+                            <h4 class="font-medium text-sm text-[#7A695C]">Ready</h4>
+                            <p class="text-xs text-[#9E8E81] mt-0.5">Est. 2:00 PM</p>
+                        </div>
+
+                        <!-- Step 5: Delivered -->
+                        <div class="flex flex-col items-center opacity-70 col-span-2 sm:col-span-1">
+                            <div class="w-12 h-12 rounded-full bg-[#E5DCD0] text-[#7A695C] flex items-center font-bold justify-center mb-3 text-sm">
+                                5
+                            </div>
+                            <h4 class="font-medium text-sm text-[#7A695C]">Delivered</h4>
+                            <p class="text-xs text-[#9E8E81] mt-0.5">Est. 4:00 PM</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-[#EAE0D0] p-6 sm:p-10 mb-8">
+                
+                <!-- Card Header -->
+                <div class="flex items-center gap-3 pb-6 border-b border-[#F0E6D8]">
+                    <div class="p-2.5 bg-[#FFF5E6] text-[#A66E38] rounded-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012-2m-6 9l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#2D231E]">Order Details</h2>
+                </div>
+
+                <!-- Order Content Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+                    
+                    <!-- Left Column: Items & Customization & Payment -->
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#8A796B] uppercase">Items & Customization</span>
+                            <h3 class="text-base font-semibold text-[#2D231E] mt-1">Cake: Chocolate Cake, 2kg</h3>
+                            
+                            <!-- Piped message badge -->
+                            <div class="mt-3 inline-block bg-white border border-[#EAE0D0] rounded-xl px-4 py-2.5 shadow-2xs">
+                                <span class="text-xs text-[#7A695C] block">Piped Message:</span>
+                                <span class="font-serif italic text-amber-800 font-medium text-sm">"Happy Birthday Aki!"</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#8A796B] uppercase">Delivery Schedule</span>
+                            <p class="text-sm font-semibold text-[#2D231E] mt-1">Delivery Date: <span class="font-normal">28/08/2026, 4:00 PM</span></p>
+                            <p class="text-xs text-[#7A695C] mt-0.5">Standard Chilled Van Courier</p>
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#8A796B] uppercase">Payment Summary</span>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-sm font-semibold text-[#2D231E]">Payment Status: <span class="font-bold text-[#1F2937]">Paid (Rs. 5,300)</span></span>
+                                <span class="bg-[#E6F4EA] text-[#137333] text-xs font-medium px-2.5 py-0.5 rounded-full border border-[#CEEAD6]">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Bakery Status & Delivery Address -->
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#8A796B] uppercase">Bakery Status</span>
+                            <p class="text-sm font-semibold text-[#2D231E] mt-1">Estimated Ready Time: <span class="font-normal">28/08/2026, 2:00 PM</span></p>
+                            <p class="text-xs text-[#B87D17] font-medium mt-0.5 flex items-center gap-1.5">
+                                <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#B87D17]"></span>
+                                Baking kitchen on track
+                            </p>
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#8A796B] uppercase">Delivery Address</span>
+                            <p class="text-sm font-semibold text-[#2D231E] mt-1">Colombo 05, Sri Lanka <span class="font-normal text-[#6B5A4E]">(+94 77 123 4567)</span></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                <a href="#" class="w-full sm:w-auto bg-[#3D2817] hover:bg-[#2A1B0E] text-white font-medium text-sm px-6 py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    View Order History
+                </a>
+
+                <div class="text-xs sm:text-sm text-[#7A695C] text-center sm:text-right">
+                    Need help with your cake? <a href="tel:+94112345678" class="font-semibold text-[#3D2817] hover:underline">Call Bakery (+94 11 234 5678)</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-[#EAE0D0] mt-16 py-6 text-center text-xs text-[#7A695C]">
+        <div class="max-w-7xl mx-auto px-4 space-y-1">
+            <p>Defneyy Bakery — Kandy, Sri Lanka &bull; Freshly Baked with Love</p>
+            <p class="text-[#9E8E81]">Hotline: +94 76 234 5678 &bull; Inquiries: hello@defneyybakery.lk</p>
+        </div>
+    </footer>
+
+</body>
+</html>
