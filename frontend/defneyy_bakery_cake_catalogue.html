@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defneyy Bakery - Cake Catalogue</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bakeryDark: '#2C1810',
+                        bakeryBrown: '#4A2511',
+                        bakeryGold: '#8C5A23',
+                        bakeryAccent: '#A75D2A',
+                        bakeryCardBg: '#FFFDF9',
+                        bakeryBg: '#F9F5EE',
+                        bakeryTextMain: '#2C1810',
+                        bakeryTextSub: '#6E655F',
+                        bakeryBtn: '#31180F',
+                        bakeryPrice: '#2B170E',
+                        bakeryBadge: '#D68C45'
+                    },
+                    fontFamily: {
+                        sans: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F4EC;
+            color: #2C1810;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom scrollbar and sleek styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F5EE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8C5A23;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F4EC] min-h-screen flex flex-col justify-between selection:bg-[#8C5A23] selection:text-white">
+
+    <!-- Top Header -->
+    <header class="bg-[#2D160D] text-[#F9F5EE] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="#" class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-white">Defneyy Bakery</a>
+            </div>
+
+            <!-- User Actions -->
+            <div class="flex items-center space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-[#D68C45] transition-colors">Login</a>
+                <a href="#" class="bg-[#9E5A2A] hover:bg-[#854b22] text-white px-4 py-2.5 rounded-xl flex items-center space-x-2 shadow-sm transition-all">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>My Cart (0)</span>
+                </a>
+                <button class="w-9 h-9 rounded-full bg-[#3D2218] flex items-center justify-center text-white hover:bg-[#4E2B1F] transition-colors">
+                    <i class="fa-solid fa-user text-sm"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sub Navigation Bar -->
+        <div class="bg-[#6B371B] border-t border-[#824422]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex space-x-8 h-12 items-center text-sm font-medium">
+                    <a href="#" class="text-[#F9F5EE]/80 hover:text-white transition-colors">Home</a>
+                    <a href="#" class="text-white bg-[#3D1E10] px-4 py-1.5 rounded-lg shadow-inner">Catalogue</a>
+                    <a href="#" class="text-[#F9F5EE]/80 hover:text-white transition-colors">My Orders</a>
+                    <a href="#" class="text-[#F9F5EE]/80 hover:text-white transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Hero Catalogue Banner -->
+        <div class="bg-gradient-to-r from-[#FDFBF7] to-[#F5ECE1] border border-[#EFE4D4] rounded-3xl p-6 sm:p-10 mb-8 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="max-w-2xl">
+                <div class="text-xs sm:text-sm font-semibold tracking-widest text-[#B56727] uppercase mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-cookie-bite"></i> Artisanal Patisserie Collection
+                </div>
+                <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2C1810] mb-3">
+                    Cake Catalogue
+                </h1>
+                <p class="text-[#6E655F] text-sm sm:text-base leading-relaxed">
+                    Handcrafted tiered gateaux, seasonal sponge infusions, and bespoke celebrations baked fresh to order in Kandy.
+                </p>
+            </div>
+
+            <!-- Signature Stats Box -->
+            <div class="bg-white/80 backdrop-blur border border-[#EADFCF] rounded-2xl px-6 py-4 flex items-center space-x-6 shadow-sm self-stretch md:self-auto justify-around md:justify-start">
+                <div class="text-center">
+                    <div class="font-serif text-2xl sm:text-3xl font-bold text-[#2C1810]">04</div>
+                    <div class="text-xs text-[#6E655F] font-medium tracking-tight mt-0.5">Signature Flavours</div>
+                </div>
+                <div class="h-10 w-[1px] bg-[#E2D4C1]"></div>
+                <div class="text-center">
+                    <div class="font-serif text-2xl sm:text-3xl font-bold text-[#B56727]">100%</div>
+                    <div class="text-xs text-[#6E655F] font-medium tracking-tight mt-0.5">Fresh Daily</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filters Bar -->
+        <div class="bg-white border border-[#EBE1D2] rounded-2xl p-3 sm:p-4 mb-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- Search Input -->
+            <div class="relative w-full md:w-[480px]">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-[#8C8075]">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </span>
+                <input type="text" placeholder="Search cakes (e.g. chocolate, birthday)..." class="w-full bg-[#F4EFE6] text-[#2C1810] placeholder-[#8C8075] text-sm rounded-xl pl-11 pr-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#B56727]/50 transition-all border border-transparent">
+            </div>
+
+            <!-- Search Button & Filters -->
+            <div class="flex items-center w-full md:w-auto justify-between md:justify-end gap-3">
+                <button class="bg-[#8A4F1D] hover:bg-[#724016] text-white px-6 py-3.5 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-all shadow-sm">
+                    <i class="fa-solid fa-sliders text-xs"></i>
+                    <span>Search</span>
+                </button>
+                <div class="flex items-center bg-[#F4EFE6] p-1 rounded-xl border border-[#E9DFD1] text-sm font-medium">
+                    <button class="bg-[#3B1E13] text-white px-4 py-2 rounded-lg shadow-sm">All Cakes</button>
+                    <button class="text-[#6E655F] hover:text-[#2C1810] px-4 py-2 rounded-lg transition-colors">Eggless</button>
+                    <button class="text-[#6E655F] hover:text-[#2C1810] px-4 py-2 rounded-lg transition-colors">Bespoke</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            
+            <!-- Product Card 1: Dark Ganache Chocolate Cake -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div>
+                    <!-- Card Image & Tag -->
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-[#F2ECE1] h-52">
+                        <span class="absolute top-3 left-3 bg-[#EAD8B5] text-[#523A1B] text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 shadow-sm">
+                            <i class="fa-solid fa-star text-[10px]"></i> Best Seller
+                        </span>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#2C1810] hover:bg-white transition-colors shadow-sm">
+                            <i class="fa-regular fa-heart text-sm"></i>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Chocolate Cake" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/e2d4c1/2c1810?text=Chocolate+Cake'">
+                    </div>
+
+                    <!-- Category & Weight -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-[#A25723] uppercase tracking-wider mb-1">
+                        <span>Dark Ganache</span>
+                        <span class="text-[#7A6E65] font-normal">1.2 kg</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="font-serif text-xl font-bold text-[#2C1810] mb-2">Chocolate Cake</h3>
+
+                    <!-- Description -->
+                    <p class="text-[#6E655F] text-xs leading-relaxed mb-4 line-clamp-2">
+                        Belgian dark chocolate drip, glossy whipped ganache, hand-rolled truffles,...
+                    </p>
+                </div>
+
+                <div>
+                    <!-- Pricing & Customize Button -->
+                    <div class="flex items-center justify-between mb-3 text-xs">
+                        <span class="text-[#6E655F]">Starting from</span>
+                        <span class="font-serif text-lg font-bold text-[#2B170E]">Rs. 3,500</span>
+                    </div>
+                    <button class="w-full bg-[#24130C] hover:bg-[#3D2115] text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xs text-[#D68C45]"></i>
+                        <span>Customize</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 2: Madagascan Vanilla Cake -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div>
+                    <!-- Card Image & Tag -->
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-[#F2ECE1] h-52">
+                        <span class="absolute top-3 left-3 bg-[#FAF2E6] text-[#634827] text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 shadow-sm border border-[#E3D1B8]">
+                            <i class="fa-solid fa-certificate text-[10px]"></i> Signature
+                        </span>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#2C1810] hover:bg-white transition-colors shadow-sm">
+                            <i class="fa-regular fa-heart text-sm"></i>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&w=600&q=80" alt="Vanilla Cake" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/e2d4c1/2c1810?text=Vanilla+Cake'">
+                    </div>
+
+                    <!-- Category & Weight -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-[#A25723] uppercase tracking-wider mb-1">
+                        <span>Madagascan</span>
+                        <span class="text-[#7A6E65] font-normal">1.0 kg</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="font-serif text-xl font-bold text-[#2C1810] mb-2">Vanilla Cake</h3>
+
+                    <!-- Description -->
+                    <p class="text-[#6E655F] text-xs leading-relaxed mb-4 line-clamp-2">
+                        Pure vanilla bean infused tender chiffon, layered with whipped mascarpone and...
+                    </p>
+                </div>
+
+                <div>
+                    <!-- Pricing & Customize Button -->
+                    <div class="flex items-center justify-between mb-3 text-xs">
+                        <span class="text-[#6E655F]">Starting from</span>
+                        <span class="font-serif text-lg font-bold text-[#2B170E]">Rs. 3,000</span>
+                    </div>
+                    <button class="w-full bg-[#24130C] hover:bg-[#3D2115] text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xs text-[#D68C45]"></i>
+                        <span>Customize</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 3: Cream Cheese Red Velvet Cake -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div>
+                    <!-- Card Image & Tag -->
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-[#F2ECE1] h-52">
+                        <span class="absolute top-3 left-3 bg-[#FAF2E6] text-[#634827] text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 shadow-sm border border-[#E3D1B8]">
+                            <i class="fa-solid fa-cake-candles text-[10px]"></i> Classic
+                        </span>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#2C1810] hover:bg-white transition-colors shadow-sm">
+                            <i class="fa-regular fa-heart text-sm"></i>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80" alt="Red Velvet Cake" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/e2d4c1/2c1810?text=Red+Velvet+Cake'">
+                    </div>
+
+                    <!-- Category & Weight -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-[#A25723] uppercase tracking-wider mb-1">
+                        <span>Cream Cheese</span>
+                        <span class="text-[#7A6E65] font-normal">1.4 kg</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="font-serif text-xl font-bold text-[#2C1810] mb-2">Red Velvet Cake</h3>
+
+                    <!-- Description -->
+                    <p class="text-[#6E655F] text-xs leading-relaxed mb-4 line-clamp-2">
+                        Velvety crimson buttermilk sponge with silky Philadelphia cream cheese swirls and...
+                    </p>
+                </div>
+
+                <div>
+                    <!-- Pricing & Customize Button -->
+                    <div class="flex items-center justify-between mb-3 text-xs">
+                        <span class="text-[#6E655F]">Starting from</span>
+                        <span class="font-serif text-lg font-bold text-[#2B170E]">Rs. 4,000</span>
+                    </div>
+                    <button class="w-full bg-[#24130C] hover:bg-[#3D2115] text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xs text-[#D68C45]"></i>
+                        <span>Customize</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 4: Tropical Berry Fruit Cake -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                <div>
+                    <!-- Card Image & Tag -->
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-[#F2ECE1] h-52">
+                        <span class="absolute top-3 left-3 bg-[#FAF2E6] text-[#634827] text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 shadow-sm border border-[#E3D1B8]">
+                            <i class="fa-solid fa-seedling text-[10px]"></i> Fresh Seasonal
+                        </span>
+                        <button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#2C1810] hover:bg-white transition-colors shadow-sm">
+                            <i class="fa-regular fa-heart text-sm"></i>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Fruit Cake" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/e2d4c1/2c1810?text=Fruit+Cake'">
+                    </div>
+
+                    <!-- Category & Weight -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-[#A25723] uppercase tracking-wider mb-1">
+                        <span>Tropical Berry</span>
+                        <span class="text-[#7A6E65] font-normal">1.3 kg</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="font-serif text-xl font-bold text-[#2C1810] mb-2">Fruit Cake</h3>
+
+                    <!-- Description -->
+                    <p class="text-[#6E655F] text-xs leading-relaxed mb-4 line-clamp-2">
+                        Airy genoise sponge crowned with glazed seasonal berries, fresh kiwi, and chantilly...
+                    </p>
+                </div>
+
+                <div>
+                    <!-- Pricing & Customize Button -->
+                    <div class="flex items-center justify-between mb-3 text-xs">
+                        <span class="text-[#6E655F]">Starting from</span>
+                        <span class="font-serif text-lg font-bold text-[#2B170E]">Rs. 3,800</span>
+                    </div>
+                    <button class="w-full bg-[#24130C] hover:bg-[#3D2115] text-white py-3 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-colors shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xs text-[#D68C45]"></i>
+                        <span>Customize</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Feature Highlights Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            
+            <!-- Feature 1 -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-6 flex items-start space-x-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-[#FDF3E7] text-[#B56727] flex items-center justify-center shrink-0 border border-[#F3E2CC]">
+                    <i class="fa-solid fa-truck-fast text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-[#2C1810] mb-1">Temperature Controlled</h4>
+                    <p class="text-[#6E655F] text-xs leading-relaxed">
+                        Chilled van delivery anywhere across Colombo and suburban limits.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-6 flex items-start space-x-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-[#FDF3E7] text-[#B56727] flex items-center justify-center shrink-0 border border-[#F3E2CC]">
+                    <i class="fa-solid fa-wheat-awn text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-[#2C1810] mb-1">Pure Ingredients</h4>
+                    <p class="text-[#6E655F] text-xs leading-relaxed">
+                        Pure New Zealand cream butter, authentic cacao, and unbleached grain flours.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white border border-[#EAE1D3] rounded-2xl p-6 flex items-start space-x-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-[#FDF3E7] text-[#B56727] flex items-center justify-center shrink-0 border border-[#F3E2CC]">
+                    <i class="fa-solid fa-gift text-lg"></i>
+                </div>
+                <div>
+                    <h4 class="font-serif text-lg font-bold text-[#2C1810] mb-1">Custom Plaques</h4>
+                    <p class="text-[#6E655F] text-xs leading-relaxed">
+                        Complimentary edible handwritten chocolate messages with every order.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#F3EBDD] border-t border-[#E4D5BE] py-8 text-[#5C4F44]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h3 class="font-serif text-xl font-bold text-[#2C1810] mb-1">Defneyy Bakery</h3>
+                <p class="text-xs text-[#7A6E65]">Defneyy Bakery — Kandy, Sri Lanka • Freshly Baked with Love</p>
+            </div>
+            <div class="flex items-center space-x-2 text-sm font-semibold text-[#8A4F1D]">
+                <i class="fa-solid fa-phone"></i>
+                <span>+94 76 234 5678</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
