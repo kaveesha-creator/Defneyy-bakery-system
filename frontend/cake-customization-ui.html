@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defneyy Bakery - Customize Your Cake</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bakeryDark: '#2C1810',
+                        bakeryBrown: '#4A2511',
+                        bakeryGold: '#8C5A23',
+                        bakeryAccent: '#A75D2A',
+                        bakeryCardBg: '#FFFDF9',
+                        bakeryBg: '#F9F5EE',
+                        bakeryTextMain: '#2C1810',
+                        bakeryTextSub: '#6E655F',
+                        bakeryBtn: '#31180F',
+                        bakeryPrice: '#2B170E',
+                        bakeryBadge: '#D68C45'
+                    },
+                    fontFamily: {
+                        sans: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F4EC;
+            color: #2C1810;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F5EE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8C5A23;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F4EC] min-h-screen flex flex-col justify-between selection:bg-[#8C5A23] selection:text-white">
+
+    <!-- Top Header -->
+    <header class="bg-[#2D160D] text-[#F9F5EE] shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-2">
+                <a href="#" class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-white">Defneyy Bakery</a>
+            </div>
+
+            <!-- User Actions -->
+            <div class="flex items-center space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-[#D68C45] transition-colors">Login</a>
+                <a href="#" class="bg-[#9E5A2A] hover:bg-[#854b22] text-white px-4 py-2.5 rounded-xl flex items-center space-x-2 shadow-sm transition-all">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>My Cart (0)</span>
+                </a>
+                <button class="w-9 h-9 rounded-full bg-[#3D2218] flex items-center justify-center text-white hover:bg-[#4E2B1F] transition-colors">
+                    <i class="fa-solid fa-user text-sm"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sub Navigation Bar -->
+        <div class="bg-[#6B371B] border-t border-[#824422]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex space-x-8 h-12 items-center text-sm font-medium">
+                    <a href="#" class="text-[#F9F5EE]/80 hover:text-white transition-colors">Home</a>
+                    <a href="#" class="text-white bg-[#3D1E10] px-4 py-1.5 rounded-lg shadow-inner">Catalogue</a>
+                    <a href="#" class="text-[#F9F5EE]/80 hover:text-white transition-colors">My Orders</a>
+                    <a href="#" class="text-[#F9F5EE]/80 hover:text-white transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        
+        <!-- Breadcrumb & Studio Location Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-2">
+            <!-- Breadcrumbs -->
+            <div class="text-xs text-[#7A6E65] flex items-center space-x-2 font-medium">
+                <a href="#" class="hover:text-[#2C1810] transition-colors">Home</a>
+                <span>></span>
+                <a href="#" class="hover:text-[#2C1810] transition-colors">Catalogue</a>
+                <span>></span>
+                <span class="text-[#2C1810] font-semibold">Artisanal Custom Cakes</span>
+            </div>
+
+            <!-- Studio Location Badge -->
+            <div class="flex items-center space-x-1.5 text-xs font-semibold text-[#8C5A23] bg-[#F2EADF] px-3 py-1.5 rounded-full border border-[#E4D5BE]">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Artisanal Studio • Colombo 05</span>
+            </div>
+        </div>
+
+        <!-- Page Header & Subtitle -->
+        <div class="mb-8">
+            <div class="text-xs sm:text-sm font-semibold tracking-widest text-[#B56727] uppercase mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Artisanal Bespoke Creation
+            </div>
+            <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#2C1810] mb-2">
+                Customize Your Cake — Chocolate Cake
+            </h1>
+            <p class="text-[#6E655F] text-sm sm:text-base max-w-3xl leading-relaxed">
+                Handcrafted with rich Belgian chocolate ganache, moist dark cocoa chiffon, and finished with delicate artisanal truffles. Tailor your celebration cake below.
+            </p>
+        </div>
+
+        <!-- Main 3-Column Grid Layout matching UI 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- LEFT COLUMN: Cake Image Card & Tasting Notes (Col span 4) -->
+            <div class="lg:col-span-4 flex flex-col gap-6">
+                
+                <!-- Cake Visual Card -->
+                <div class="bg-white border border-[#EAE1D3] rounded-2xl p-4 shadow-sm">
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-[#F2ECE1] h-72">
+                        <span class="absolute top-3 left-3 bg-[#FAF2E6]/90 backdrop-blur-sm text-[#634827] text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm border border-[#E3D1B8]">
+                            <i class="fa-solid fa-cake-candles text-xs"></i> Freshly Baked on Order
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Chocolate Cake" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/e2d4c1/2c1810?text=Chocolate+Cake'">
+                        <div class="absolute bottom-3 left-3 right-3 bg-gradient-to-t from-[#2C1810]/90 to-transparent p-3 pt-6 rounded-b-xl flex justify-between items-end text-white">
+                            <div>
+                                <div class="text-[10px] text-[#EAD8B5] tracking-widest uppercase font-semibold">Signature Tier</div>
+                                <div class="font-serif text-lg font-bold">Truffle & Ganache Chiffon</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[10px] text-[#EAD8B5]">From</div>
+                                <div class="font-serif text-lg font-bold text-white">Rs. 2,800</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Badges Pills -->
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-[#F8F3EC] text-[#634827] text-xs px-3 py-1.5 rounded-lg font-medium border border-[#EADFCF] flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#B56727]"></i> Belgian Couverture Ganache
+                        </span>
+                        <span class="bg-[#F8F3EC] text-[#634827] text-xs px-3 py-1.5 rounded-lg font-medium border border-[#EADFCF] flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-[10px] text-[#B56727]"></i> 100% Pure Butter
+                        </span>
+                        <span class="bg-[#F8F3EC] text-[#634827] text-xs px-3 py-1.5 rounded-lg font-medium border border-[#EADFCF] flex items-center gap-1.5">
+                            <i class="fa-solid fa-snowflake text-[10px] text-[#B56727]"></i> Chilled Delivery
+                        </span>
+                    </div>
+
+                    <!-- Notice Box -->
+                    <div class="bg-[#F7F1E7] border border-[#E9DFC8] rounded-xl p-3 text-xs text-[#634827] flex items-start gap-2.5">
+                        <i class="fa-solid fa-gift text-[#B56727] mt-0.5"></i>
+                        <span>Includes signature Defneyy gold cake board, keepsake box & celebration candles.</span>
+                    </div>
+                </div>
+
+                <!-- Tasting Notes & Texture Box -->
+                <div class="bg-white border border-[#EAE1D3] rounded-2xl p-4 shadow-sm flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-[#F8F3EC] text-[#B56727] flex items-center justify-center shrink-0 border border-[#EADFCF]">
+                        <i class="fa-solid fa-utensils text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-sm font-bold text-[#2C1810] mb-0.5">Tasting Notes & Texture</h4>
+                        <p class="text-[#6E655F] text-xs leading-relaxed">
+                            Intense 54% dark cocoa melt, silken ganache crumb, lightly sweetened velvet finish.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CENTER COLUMN: Customization Form Steps (Col span 5) -->
+            <div class="lg:col-span-5 bg-white border border-[#EAE1D3] rounded-2xl p-6 shadow-sm flex flex-col gap-6">
+                
+                <!-- Step 1: Select Cake Size -->
+                <div>
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="font-serif text-sm font-bold text-[#2C1810]">1. Select Cake Size</label>
+                        <a href="#" class="text-xs text-[#B56727] font-semibold hover:underline">Size Guide</a>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-2">
+                        <!-- Size Option 1 -->
+                        <div class="border border-[#E5DAD0] rounded-xl p-3 text-center cursor-pointer hover:border-[#B56727] transition-all">
+                            <div class="font-serif font-bold text-[#2C1810] text-sm">1 kg</div>
+                            <div class="text-xs text-[#7A6E65] mt-0.5">Rs. 2,800</div>
+                        </div>
+                        <!-- Size Option 2 (Selected) -->
+                        <div class="border-2 border-[#4A2511] bg-[#FAF4ED] rounded-xl p-3 text-center cursor-pointer shadow-sm">
+                            <div class="font-serif font-bold text-[#4A2511] text-sm">2 kg</div>
+                            <div class="text-xs text-[#4A2511] font-medium mt-0.5">Rs. 5,000</div>
+                        </div>
+                        <!-- Size Option 3 -->
+                        <div class="border border-[#E5DAD0] rounded-xl p-3 text-center cursor-pointer hover:border-[#B56727] transition-all">
+                            <div class="font-serif font-bold text-[#2C1810] text-sm">3 kg</div>
+                            <div class="text-xs text-[#7A6E65] mt-0.5">Rs. 7,200</div>
+                        </div>
+                    </div>
+                    <div class="text-[11px] text-[#7A6E65] flex items-center gap-1.5 mt-1.5">
+                        <i class="fa-solid fa-circle-check text-[#B56727]"></i>
+                        <span>Selected: <strong class="text-[#2C1810]">2 kg</strong> — Ideal for 12 to 16 guests</span>
+                    </div>
+                </div>
+
+                <hr class="border-[#EFE5D8]">
+
+                <!-- Step 2: Cake Flavor Base -->
+                <div>
+                    <label class="font-serif text-sm font-bold text-[#2C1810] block mb-2">2. Cake Flavor Base</label>
+                    <div class="relative">
+                        <select class="w-full bg-[#FAF5EE] border border-[#E5DAD0] text-[#2C1810] text-xs sm:text-sm rounded-xl px-4 py-3.5 appearance-none focus:outline-none focus:ring-1 focus:ring-[#B56727]">
+                            <option>Chocolate (Signature Belgian Ganache)</option>
+                            <option>Rich Mocha Espresso Infusion</option>
+                            <option>Double Chocolate Fudge</option>
+                        </select>
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-[#7A6E65]">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <hr class="border-[#EFE5D8]">
+
+                <!-- Step 3: Exterior Styling & Theme -->
+                <div>
+                    <label class="font-serif text-sm font-bold text-[#2C1810] block mb-2">3. Exterior Styling & Theme</label>
+                    <div class="relative">
+                        <input type="text" value="Simple / Themed / Custom photo" class="w-full bg-[#FAF5EE] border border-[#E5DAD0] text-[#2C1810] text-xs sm:text-sm rounded-xl px-4 py-3.5 pr-10 focus:outline-none focus:ring-1 focus:ring-[#B56727]">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-[#7A6E65]">
+                            <i class="fa-solid fa-palette text-sm"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <hr class="border-[#EFE5D8]">
+
+                <!-- Step 4: Inscription on Cake -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="font-serif text-sm font-bold text-[#2C1810]">4. Inscription on Cake</label>
+                        <span class="text-[11px] text-[#7A6E65]">24/35 chars</span>
+                    </div>
+                    <div class="relative mb-1">
+                        <input type="text" value="Happy Birthday Akki!" class="w-full bg-[#FAF5EE] border border-[#E5DAD0] text-[#2C1810] text-xs sm:text-sm rounded-xl px-4 py-3.5 pr-10 focus:outline-none focus:ring-1 focus:ring-[#B56727]">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-[#7A6E65]">
+                            <i class="fa-solid fa-pen text-xs"></i>
+                        </span>
+                    </div>
+                    <p class="text-[11px] text-[#7A6E65] flex items-center gap-1">
+                        <i class="fa-solid fa-check text-[10px] text-[#B56727]"></i> Piped with white chocolate ganache (max 35 characters).
+                    </p>
+                </div>
+
+                <hr class="border-[#EFE5D8]">
+
+                <!-- Step 5: Delivery Date & Preferred Time -->
+                <div>
+                    <label class="font-serif text-sm font-bold text-[#2C1810] block mb-2">5. Delivery Date & Preferred Time (Colombo)</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2">
+                        <!-- Date Input -->
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#7A6E65] pointer-events-none">
+                                <i class="fa-regular fa-calendar text-xs text-[#B56727]"></i>
+                            </span>
+                            <input type="text" value="28/10/2026" class="w-full bg-[#FAF5EE] border border-[#E5DAD0] text-[#2C1810] text-xs rounded-xl pl-10 pr-3 py-3 focus:outline-none">
+                        </div>
+                        <!-- Time Input -->
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#7A6E65] pointer-events-none">
+                                <i class="fa-regular fa-clock text-xs text-[#B56727]"></i>
+                            </span>
+                            <input type="text" value="14:30" class="w-full bg-[#FAF5EE] border border-[#E5DAD0] text-[#2C1810] text-xs rounded-xl pl-10 pr-3 py-3 focus:outline-none">
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-[#7A6E65]">Please allow a minimum 24-hour baking turnaround window.</p>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="w-full bg-[#31180F] hover:bg-[#4A2511] text-white py-3.5 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-all shadow-sm mt-2">
+                    <i class="fa-solid fa-bag-shopping text-xs text-[#D68C45]"></i>
+                    <span>Add to Cart • Rs. 5,000</span>
+                </button>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Order Summary & Payment (Col span 3) -->
+            <div class="lg:col-span-3 flex flex-col gap-6">
+                
+                <!-- Order Summary Card -->
+                <div class="bg-white border border-[#EAE1D3] rounded-2xl p-5 shadow-sm">
+                    <div class="flex items-center justify-between pb-3 mb-4 border-b border-[#EFE5D8]">
+                        <h3 class="font-serif text-base font-bold text-[#2C1810]">Order Summary</h3>
+                        <i class="fa-solid fa-receipt text-[#B56727]"></i>
+                    </div>
+
+                    <!-- Items breakdown -->
+                    <div class="space-y-3 mb-4 text-xs">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="font-bold text-[#2C1810]">Chocolate Cake (2kg)</div>
+                                <div class="text-[11px] text-[#7A6E65]">Signature Ganache Base</div>
+                            </div>
+                            <span class="font-serif font-bold text-[#2B170E]">Rs. 5,000</span>
+                        </div>
+                        <div class="flex justify-between items-start pt-2 border-t border-[#F2EAE0]">
+                            <div>
+                                <div class="font-medium text-[#2C1810]">Delivery Fee</div>
+                                <div class="text-[11px] text-[#7A6E65]">Colombo & Suburbs</div>
+                            </div>
+                            <span class="font-serif font-bold text-[#2B170E]">Rs. 300</span>
+                        </div>
+                        <div class="flex justify-between items-start pt-2 border-t border-[#F2EAE0]">
+                            <div>
+                                <div class="font-medium text-[#2C1810]">Keepsake Board & Candles</div>
+                            </div>
+                            <span class="text-xs font-semibold text-[#B56727]">Complimentary</span>
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="pt-4 border-t border-[#EFE5D8] flex justify-between items-center mb-6">
+                        <span class="font-serif text-base font-bold text-[#2C1810]">Total</span>
+                        <span class="font-serif text-xl font-bold text-[#B56727]">Rs. 5,300</span>
+                    </div>
+
+                    <!-- Payment Method Selector -->
+                    <div class="mb-4">
+                        <label class="text-[11px] font-bold text-[#7A6E65] uppercase tracking-wider block mb-1.5">Payment Method</label>
+                        <div class="bg-[#FAF5EE] border border-[#E5DAD0] rounded-xl p-3 flex items-center justify-between text-xs text-[#2C1810] font-medium">
+                            <span>Card / Online Payment</span>
+                            <i class="fa-regular fa-credit-card text-[#B56727]"></i>
+                        </div>
+                        <p class="text-[10px] text-[#7A6E65] mt-1.5 flex items-center gap-1">
+                            <i class="fa-solid fa-lock text-[9px] text-[#B56727]"></i> Visa, Mastercard, Koko Pay & Bank Transfer supported.
+                        </p>
+                    </div>
+
+                    <!-- Pay & Confirm Button -->
+                    <button class="w-full bg-[#9E5A2A] hover:bg-[#854b22] text-white py-3.5 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-all shadow-sm mb-4">
+                        <span>Pay & Confirm</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <!-- Delivery Guarantee Note -->
+                    <div class="bg-[#F7F1E7] border border-[#E9DFC8] rounded-xl p-3 text-[11px] text-[#634827] flex items-center gap-2.5">
+                        <i class="fa-solid fa-truck-fast text-[#B56727] text-sm shrink-0"></i>
+                        <span>100% Chilled Van Delivery Guarantee across Colombo</span>
+                    </div>
+                </div>
+
+                <!-- Defneyy Quality Promise Box -->
+                <div class="bg-white border border-[#EAE1D3] rounded-2xl p-5 shadow-sm text-xs">
+                    <div class="flex items-center space-x-2 text-[#8C5A23] font-bold mb-1.5">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Defneyy Quality Promise</span>
+                    </div>
+                    <p class="text-[#6E655F] leading-relaxed">
+                        Prepared within 4 hours of your chosen slot for peerless freshness. Dietary swaps available via phone.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#F3EBDD] border-t border-[#E4D5BE] py-8 text-[#5C4F44]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h3 class="font-serif text-xl font-bold text-[#2C1810] mb-1">Defneyy Bakery</h3>
+                <p class="text-xs text-[#7A6E65]">Defneyy Bakery — Kandy, Sri Lanka • Freshly Baked with Love</p>
+            </div>
+            <div class="flex items-center space-x-2 text-sm font-semibold text-[#8A4F1D]">
+                <i class="fa-solid fa-phone"></i>
+                <span>+94 76 234 5678</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
