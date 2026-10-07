@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defneyy Bakery - Admin Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF6ED;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF6ED] text-[#2D231E] min-h-screen flex flex-col selection:bg-[#4A2E1B] selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-[#2D231E] text-white sticky top-0 z-30 shadow-md">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 py-3.5 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Left: Logo & Title -->
+            <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-[#C59B27] flex items-center justify-center text-[#2D231E] font-bold shadow-inner">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl sm:text-2xl tracking-wide font-bold italic">Defneyy Bakery</span>
+                        <span class="text-[#A39285] text-xs sm:text-sm ml-2 hidden sm:inline">— Admin Dashboard</span>
+                    </div>
+                </div>
+                <span class="bg-[#3E3029] text-[#E8D4BE] text-[11px] font-medium px-2.5 py-1 rounded-md border border-[#524137] hidden lg:inline">
+                    Artisanal Confectionery
+                </span>
+            </div>
+
+            <!-- Right: Kitchen Status & Staff Profile -->
+            <div class="flex items-center gap-4 w-full md:w-auto justify-end">
+                <!-- Kitchen Status Badge -->
+                <div class="hidden sm:flex items-center gap-2 bg-[#231B17] border border-[#3E3029] px-3.5 py-1.5 rounded-full text-xs font-medium text-[#D4C3B3]">
+                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Colombo 05 Kitchen &bull; Online
+                </div>
+
+                <!-- Staff Profile -->
+                <div class="flex items-center gap-2.5 bg-[#3B2D26] border border-[#524137] px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium text-white shadow-xs">
+                    <div class="w-6 h-6 rounded-full bg-[#D49E3E] text-[#2D231E] font-bold flex items-center justify-center text-xs">
+                        K
+                    </div>
+                    <span>Staff: Kavindi</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#A39285]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Workspace Layout -->
+    <div class="flex-1 flex flex-col md:flex-row max-w-[1440px] w-full mx-auto">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-72 bg-[#2D231E] text-[#D4C3B3] flex flex-col justify-between border-r border-[#3E3029] p-4 shrink-0">
+            
+            <div class="space-y-6">
+                <!-- Navigation Links -->
+                <nav class="space-y-1.5">
+                    
+                    <!-- Dashboard (Active) -->
+                    <a href="#" class="flex items-center justify-between px-3.5 py-3 rounded-xl bg-[#D49E3E] text-[#2D231E] font-semibold text-sm shadow-sm transition-all">
+                        <div class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </div>
+                        <span class="w-2 h-2 rounded-full bg-[#2D231E]"></span>
+                    </a>
+
+                    <!-- Orders -->
+                    <a href="#" class="flex items-center justify-between px-3.5 py-3 rounded-xl hover:bg-[#3B2D26] text-[#C4B2A5] hover:text-white font-medium text-sm transition-all">
+                        <div class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            <span>Orders</span>
+                        </div>
+                        <span class="bg-[#D49E3E] text-[#2D231E] font-bold text-xs px-2 py-0.5 rounded-full">12</span>
+                    </a>
+
+                    <!-- Inventory -->
+                    <a href="#" class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#3B2D26] text-[#C4B2A5] hover:text-white font-medium text-sm transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        <span>Inventory</span>
+                    </a>
+
+                    <!-- Products / Menu -->
+                    <a href="#" class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#3B2D26] text-[#C4B2A5] hover:text-white font-medium text-sm transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span>Products / Menu</span>
+                    </a>
+
+                    <!-- AI Demand Forecast -->
+                    <a href="#" class="flex items-center justify-between px-3.5 py-3 rounded-xl hover:bg-[#3B2D26] text-[#C4B2A5] hover:text-white font-medium text-sm transition-all">
+                        <div class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span>AI Demand Forecast</span>
+                        </div>
+                        <span class="bg-[#E6C687] text-[#2D231E] font-bold text-[10px] px-1.5 py-0.5 rounded tracking-wide">AI</span>
+                    </a>
+
+                    <!-- Sales Reports -->
+                    <a href="#" class="flex items-center gap-3 px-3.5 py-3 rounded-xl hover:bg-[#3B2D26] text-[#C4B2A5] hover:text-white font-medium text-sm transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span>Sales Reports</span>
+                    </a>
+
+                </nav>
+            </div>
+
+            <!-- Bottom: Shift Schedule & ERP Footer -->
+            <div class="pt-6 border-t border-[#3E3029] space-y-4 mt-6">
+                <div class="bg-[#231B17] border border-[#3E3029] rounded-xl p-3.5 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-[#E8D4BE]">Shift Schedule</span>
+                        <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded-md">Active</span>
+                    </div>
+                    <p class="text-xs text-[#C4B2A5]">Morning Shift &bull; 08:00 - 17:00</p>
+                    <div class="text-[10px] text-[#8C7A6B] pt-1 border-t border-[#312520]">
+                        Defneyy ERP v2.4 &bull; Colombo
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main Dashboard Content Area -->
+        <main class="flex-1 p-4 sm:p-8 space-y-8 overflow-x-hidden">
+            
+            <!-- 4 Top Summary Metric Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                
+                <!-- Card 1: Pending Orders -->
+                <div class="bg-white rounded-2xl p-5 shadow-xs border border-[#EBE1D2] flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#7A695C] uppercase">Pending Orders</span>
+                            <h2 class="font-serif text-3xl font-bold text-[#2D231E] mt-1">12</h2>
+                        </div>
+                        <div class="p-2.5 bg-[#FFF4E6] text-[#B87D17] rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-xs text-[#8A796B] font-medium mt-4 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        Requires confirmation
+                    </p>
+                </div>
+
+                <!-- Card 2: In Preparation -->
+                <div class="bg-white rounded-2xl p-5 shadow-xs border border-[#EBE1D2] flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#7A695C] uppercase">In Preparation</span>
+                            <h2 class="font-serif text-3xl font-bold text-[#2D231E] mt-1">5</h2>
+                        </div>
+                        <div class="p-2.5 bg-[#FFF4E6] text-[#D49E3E] rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-xs text-[#8A796B] font-medium mt-4 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        Baking & styling in kitchen
+                    </p>
+                </div>
+
+                <!-- Card 3: Low Stock Items -->
+                <div class="bg-white rounded-2xl p-5 shadow-xs border border-[#EBE1D2] flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#7A695C] uppercase">Low Stock Items</span>
+                            <h2 class="font-serif text-3xl font-bold text-[#2D231E] mt-1">3</h2>
+                        </div>
+                        <div class="p-2.5 bg-[#FDF2F2] text-[#DC2626] rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-xs text-[#DC2626] font-medium mt-4 truncate">
+                        &bull; Flour, Butter, Cocoa
+                    </p>
+                </div>
+
+                <!-- Card 4: Today's Sales -->
+                <div class="bg-white rounded-2xl p-5 shadow-xs border border-[#EBE1D2] flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="text-xs font-semibold tracking-wider text-[#7A695C] uppercase">Today's Sales</span>
+                            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#2D231E] mt-1">Rs. 42,000</h2>
+                        </div>
+                        <div class="p-2.5 bg-[#E6F4EA] text-[#137333] rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-xs text-[#137333] font-semibold mt-4 flex items-center gap-1">
+                        &uarr; +14% vs yesterday
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Recent Orders Section -->
+            <div class="bg-white rounded-2xl shadow-xs border border-[#EBE1D2] p-6 space-y-6">
+                
+                <!-- Header and Filter Tabs -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#2D231E]">Recent Orders</h2>
+                        <p class="text-xs sm:text-sm text-[#7A695C] mt-0.5">Active orders scheduled for preparation and delivery today</p>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="flex items-center bg-[#FAF6ED] p-1 rounded-xl border border-[#EBE1D2] text-xs font-medium">
+                        <button class="px-4 py-2 rounded-lg bg-[#2D231E] text-white shadow-xs">All</button>
+                        <button class="px-4 py-2 rounded-lg text-[#7A695C] hover:text-[#2D231E]">Pending</button>
+                        <button class="px-4 py-2 rounded-lg text-[#7A695C] hover:text-[#2D231E]">In Preparation</button>
+                        <button class="px-4 py-2 rounded-lg text-[#7A695C] hover:text-[#2D231E]">Ready</button>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[700px]">
+                        <thead>
+                            <tr class="bg-[#2D231E] text-white text-xs uppercase tracking-wider rounded-lg overflow-hidden">
+                                <th class="py-3.5 px-4 rounded-l-xl font-semibold">Order ID</th>
+                                <th class="py-3.5 px-4 font-semibold">Customer</th>
+                                <th class="py-3.5 px-4 font-semibold">Cake</th>
+                                <th class="py-3.5 px-4 font-semibold">Status</th>
+                                <th class="py-3.5 px-4 rounded-r-xl font-semibold text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-[#F0E6D8] text-sm font-medium text-[#2D231E]">
+                            
+                            <!-- Row 1: DB-0143 -->
+                            <tr class="hover:bg-[#FAF6ED] transition-colors">
+                                <td class="py-4 px-4 font-bold text-[#A66E38]">DB-0143</td>
+                                <td class="py-4 px-4">A. Perera</td>
+                                <td class="py-4 px-4 text-[#6B5A4E]">Chocolate 2kg</td>
+                                <td class="py-4 px-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#FFF4D9] text-[#B87D17] border border-[#F3E0B5]">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-[#B87D17] mr-1.5"></span>
+                                        Preparation
+                                    </span>
+                                </td>
+                                <td class="py-4 px-4 text-right">
+                                    <button class="bg-[#D49E3E] hover:bg-[#B87D17] text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-xs transition-all">
+                                        Update
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Row 2: DB-0144 -->
+                            <tr class="hover:bg-[#FAF6ED] transition-colors">
+                                <td class="py-4 px-4 font-bold text-[#A66E38]">DB-0144</td>
+                                <td class="py-4 px-4">S. Fernando</td>
+                                <td class="py-4 px-4 text-[#6B5A4E]">Red Velvet 1kg</td>
+                                <td class="py-4 px-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#FFF9EE] text-[#D97706] border border-[#FDE68A]">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-1.5"></span>
+                                        Pending
+                                    </span>
+                                </td>
+                                <td class="py-4 px-4 text-right">
+                                    <button class="bg-[#2D231E] hover:bg-[#1A1411] text-white text-xs font-semibold px-4 py-2 rounded-lg shadow-xs transition-all">
+                                        Confirm
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Row 3: DB-0145 -->
+                            <tr class="hover:bg-[#FAF6ED] transition-colors">
+                                <td class="py-4 px-4 font-bold text-[#A66E38]">DB-0145</td>
+                                <td class="py-4 px-4">N. Silva</td>
+                                <td class="py-4 px-4 text-[#6B5A4E]">Vanilla 1kg</td>
+                                <td class="py-4 px-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#E6F4EA] text-[#137333] border border-[#CEEAD6]">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+                                        Ready
+                                    </span>
+                                </td>
+                                <td class="py-4 px-4 text-right">
+                                    <button class="border border-[#2D231E] hover:bg-[#2D231E] hover:text-white text-[#2D231E] text-xs font-semibold px-3 py-2 rounded-lg transition-all">
+                                        Mark Delivered
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Row 4: DB-0146 -->
+                            <tr class="hover:bg-[#FAF6ED] transition-colors">
+                                <td class="py-4 px-4 font-bold text-[#A66E38]">DB-0146</td>
+                                <td class="py-4 px-4">M. De Kauwe</td>
+                                <td class="py-4 px-4 text-[#6B5A4E]">Fruit Gateau 1.5kg</td>
+                                <td class="py-4 px-4">
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#F1F3F5] text-[#495057] border border-[#DEE2E6]">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1.5"></span>
+                                        Delivered
+                                    </span>
+                                </td>
+                                <td class="py-4 px-4 text-right">
+                                    <a href="#" class="text-xs font-semibold text-[#7A695C] hover:text-[#2D231E] underline">View Receipt</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- AI Demand Forecast Section -->
+            <div class="bg-white rounded-2xl shadow-xs border border-[#EBE1D2] p-6 sm:p-8 space-y-6">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#F0E6D8]">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 bg-[#FFF5E6] text-[#A66E38] rounded-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#2D231E]">AI Demand Forecast (Next 7 Days)</h2>
+                            <p class="text-xs sm:text-sm text-[#7A695C] mt-0.5">Predictive stock requirements based on upcoming events & past 60 days of Colombo orders</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="inline-flex items-center gap-1.5 bg-[#E6F4EA] text-[#137333] border border-[#CEEAD6] px-3.5 py-1.5 rounded-full text-xs font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            94% Confidence Accuracy
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Ingredient Item 1: Flour -->
+                <div class="bg-[#FAF6ED] border border-[#EAE0D0] rounded-xl p-4 sm:p-5 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <span class="font-semibold text-sm sm:text-base text-[#2D231E]">
+                            Flour <span class="font-normal text-[#6B5A4E] text-xs sm:text-sm">needs 40kg (in stock: 25kg)</span>
+                        </span>
+                        <span class="bg-[#FDF2F2] text-[#DC2626] border border-[#FCA5A5] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 w-fit">
+                            &warning; Low stock warning (-15kg deficit)
+                        </span>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-[#E5DCD0] h-3 rounded-full overflow-hidden relative flex">
+                        <div class="bg-[#D97706] h-full" style="width: 62.5%;"></div>
+                        <div class="bg-[#FCA5A5] h-full flex-1"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#7A695C]">
+                        <span>Current: 25 kg</span>
+                        <span>Target: 40 kg</span>
+                    </div>
+                </div>
+
+                <!-- Ingredient Item 2: Sugar -->
+                <div class="bg-[#FAF6ED] border border-[#EAE0D0] rounded-xl p-4 sm:p-5 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <span class="font-semibold text-sm sm:text-base text-[#2D231E]">
+                            Sugar <span class="font-normal text-[#6B5A4E] text-xs sm:text-sm">needs 20kg (in stock: 30kg)</span>
+                        </span>
+                        <span class="bg-[#E6F4EA] text-[#137333] border border-[#CEEAD6] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 w-fit">
+                            &check; Stock OK (+10kg buffer)
+                        </span>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-[#E5DCD0] h-3 rounded-full overflow-hidden relative flex">
+                        <div class="bg-[#0D9488] h-full w-full"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#7A695C]">
+                        <span>Current: 30 kg (Sufficient)</span>
+                        <span>Target: 20 kg</span>
+                    </div>
+                </div>
+
+                <!-- Ingredient Item 3: Butter -->
+                <div class="bg-[#FAF6ED] border border-[#EAE0D0] rounded-xl p-4 sm:p-5 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <span class="font-semibold text-sm sm:text-base text-[#2D231E]">
+                            Butter <span class="font-normal text-[#6B5A4E] text-xs sm:text-sm">needs 15kg (in stock: 8kg)</span>
+                        </span>
+                        <span class="bg-[#FDF2F2] text-[#DC2626] border border-[#FCA5A5] text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 w-fit">
+                            &warning; Low stock warning (-7kg deficit)
+                        </span>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-[#E5DCD0] h-3 rounded-full overflow-hidden relative flex">
+                        <div class="bg-[#D97706] h-full" style="width: 53.3%;"></div>
+                        <div class="bg-[#FCA5A5] h-full flex-1"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-[#7A695C]">
+                        <span>Current: 8 kg</span>
+                        <span>Target: 15 kg</span>
+                    </div>
+                </div>
+
+                <!-- AI Restock Recommendation Footer Banner -->
+                <div class="bg-[#F5ECE1] border border-[#E5DCD0] rounded-2xl p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-start gap-3">
+                        <div class="p-2 bg-[#FFF4E6] text-[#A66E38] rounded-xl shrink-0">
+                            🧁
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-[#2D231E]">AI RESTOCK RECOMMENDATION</h4>
+                            <p class="text-xs sm:text-sm text-[#7A695C] mt-0.5">
+                                Restock <span class="font-semibold text-[#2D231E]">Flour (+20kg)</span> and <span class="font-semibold text-[#2D231E]">Pure Butter (+10kg)</span> before Friday evening peak orders to prevent fulfillment delays.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="w-full md:w-auto bg-[#3D2817] hover:bg-[#2A1B0E] text-white font-semibold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md transition-all shrink-0 flex items-center justify-center gap-2">
+                        <span>+ Generate Supplier PO</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
